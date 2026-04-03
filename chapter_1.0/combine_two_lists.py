@@ -13,13 +13,13 @@ def combine_lists(list1, list2):
     list = []
     
     # Merge the two lists while maintaining sorted order
-    while i < len(list1) and j < len(list2):
-        if list1[i] < list2[j]:
+    while i < len(list1) and j < len(list2):     # Loop until we reach the end of either list i or j, we will compare the current elements of both lists and append the smaller one to the result list, then move the pointer of that list forward.   
+        if list1[i] < list2[j]:                 # if i < j then we append i to the list and move i forward, else we append j to the list and move j forward.
             list.append(list1[i])
-            i += 1
+            i += 1                              # Move the pointer of list1 forward
         else:
-            list.append(list2[j])
-            j += 1
+            list.append(list2[j])               # if j < i then we append j to the list and move j forward, else we append i to the list and move i forward.
+            j += 1                              # Move the pointer of list2 forward     
     
     # Append any remaining elements from either list
     list.extend(list1[i:])
