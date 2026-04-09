@@ -10,7 +10,7 @@ class Stack:
     def __init__(self, max_size):
         
         self.max_size = max_size
-        self.top = -1
+        self.top = -1 # Initialize top index to -1 to indicate an empty stack
         self.items = [None] * max_size
 
     def is_Empty(self):
@@ -20,7 +20,7 @@ class Stack:
         if self.top >= self.max_size - 1:
             print("Stack overflow on push")
         else:
-            self.top += 1  # Increment top index
+            self.top += 1  # Increment top index to point to the new top position
             self.items[self.top] = element
 
     def pop(self):
