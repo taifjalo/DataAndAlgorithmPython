@@ -18,14 +18,19 @@ class DoublyLinkedList:
         self._size = 0     # Number of nodes in the list
 
     def __repr__(self):
-        current_node = self._head
-        values = ''
-        while current_node:
-            values += f', {current_node.data}'
-            current_node = current_node.next
-        plural = '' if self._size == 1 else 's'
-        return f'<DoublyLinkedList ({self._size} element{plural}): [{values.lstrip(", ")}]>'
 
+        values = []
+        current = self._top
+    
+        while current:
+            values.append(str(current.data))  # نحولها نص بدون quotes
+            current = current.next
+    
+        plural = '' if self._size == 1 else 's'
+    
+        return f'<Stack ({self._size} element{plural}): [{", ".join(values)}]>'
+    
+    
     def __len__(self):
         return self._size
 
